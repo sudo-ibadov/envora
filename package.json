@@ -1,5 +1,5 @@
 {
-  "name": "@sudo-ibadov/envora",
+  "name": "envora",
   "version": "1.0.0",
   "description": "Modern configuration and environment management for Node.js applications",
   "keywords": [
