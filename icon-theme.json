@@ -1,0 +1,10 @@
+{
+  "fileExtensions": {
+    "envora": "envora_icon"
+  },
+  "iconDefinitions": {
+    "envora_icon": {
+      "iconPath": "./icons/envora.png"
+    }
+  }
+}

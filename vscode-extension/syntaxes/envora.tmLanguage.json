@@ -1,0 +1,74 @@
+{
+  "name": "Envora",
+  "scopeName": "source.envora",
+  "patterns": [
+    { "include": "#comment" },
+    { "include": "#section" },
+    { "include": "#assignment" },
+    { "include": "#value" }
+  ],
+  "repository": {
+    "comment": {
+      "name": "comment.line.number-sign.envora",
+      "match": "#.*$"
+    },
+    "section": {
+      "name": "entity.name.section.envora",
+      "match": "^\\s*([A-Z_][A-Z0-9_]*)\\s*(?=\\{)"
+    },
+    "assignment": {
+      "patterns": [
+        {
+          "match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*[:=]",
+          "captures": {
+            "1": { "name": "variable.other.envora" }
+          }
+        }
+      ]
+    },
+    "builtin": {
+      "patterns": [
+        {
+          "name": "support.function.envora",
+          "match": "\\b(env|required|secret)\\b"
+        }
+      ]
+    },
+    "string": {
+      "name": "string.quoted.double.envora",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.envora",
+          "match": "\\\\."
+        },
+        {
+          "name": "variable.other.interpolated.envora",
+          "match": "\\$\\{[^}]+\\}"
+        }
+      ]
+    },
+    "number": {
+      "name": "constant.numeric.envora",
+      "match": "-?\\b\\d+(\\.\\d+)?([eE][+-]?\\d+)?\\b"
+    },
+    "boolean": {
+      "name": "constant.language.boolean.envora",
+      "match": "\\b(true|false)\\b"
+    },
+    "null": {
+      "name": "constant.language.null.envora",
+      "match": "\\bnull\\b"
+    },
+    "value": {
+      "patterns": [
+        { "include": "#string" },
+        { "include": "#number" },
+        { "include": "#boolean" },
+        { "include": "#null" },
+        { "include": "#builtin" }
+      ]
+    }
+  }
+}

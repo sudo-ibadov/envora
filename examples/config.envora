@@ -1,0 +1,45 @@
+# Envora Example Configuration
+# This demonstrates the full .envora syntax
+
+APP {
+    name: "Example Application"
+    environment: "development"
+    debug: true
+    version: "1.0.0"
+}
+
+SERVER {
+    host: "localhost"
+    port: 3000
+    url: "http://${SERVER.host}:${SERVER.port}"
+}
+
+DATABASE {
+    host: "localhost"
+    port: 27017
+    name: "example"
+    credentials {
+        username: "admin"
+        password: secret(env("DATABASE_PASSWORD", "changeme"))
+    }
+}
+
+# Discord bot configuration (envora is Discord-agnostic)
+# Uncomment and set environment variables to use
+# DISCORD {
+#     token: env("DISCORD_TOKEN")
+#     clientId: env("DISCORD_CLIENT_ID")
+#     guildId: env("DISCORD_GUILD_ID")
+# }
+
+FEATURES = [
+    "authentication",
+    "logging",
+    "cache"
+]
+
+API {
+    key: env("API_KEY", "demo-key")
+    url: env("API_URL", "https://api.example.com")
+    timeout: 5000
+}

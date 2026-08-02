@@ -1,0 +1,32 @@
+{
+  "hidesExplorerArrows": false,
+  "file": "_file",
+  "folder": "_folder",
+  "folderExpanded": "_folder_open",
+  "fileExtensions": {
+    "envora": "envora_icon"
+  },
+  "iconDefinitions": {
+    "envora_icon": {
+      "iconPath": "./icons/envora.png"
+    },
+    "_file": {
+      "fontCharacter": "\\e002",
+      "fontColor": "#7B858B",
+      "fontSize": "14px",
+      "fontId": "vscode-icons"
+    },
+    "_folder": {
+      "fontCharacter": "\\e003",
+      "fontColor": "#7B858B",
+      "fontSize": "14px",
+      "fontId": "vscode-icons"
+    },
+    "_folder_open": {
+      "fontCharacter": "\\e004",
+      "fontColor": "#7B858B",
+      "fontSize": "14px",
+      "fontId": "vscode-icons"
+    }
+  }
+}

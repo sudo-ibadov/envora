@@ -1,0 +1,77 @@
+{
+  "name": "envora",
+  "version": "1.0.0",
+  "description": "Modern configuration and environment management for Node.js applications",
+  "keywords": [
+    "config",
+    "configuration",
+    "environment",
+    "env",
+    "dotenv",
+    "settings",
+    "envora",
+    "nodejs",
+    "esm"
+  ],
+  "author": {
+    "name": "Envora Contributors"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sudo-ibadov/envora.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sudo-ibadov/envora/issues"
+  },
+  "homepage": "https://github.com/sudo-ibadov/envora#readme",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./src/index.js",
+      "default": "./src/index.js"
+    }
+  },
+  "main": "./src/index.js",
+  "bin": {
+    "envora": "./bin/envora.js"
+  },
+  "files": [
+    "src/",
+    "bin/",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --runInBand",
+    "test:coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage --runInBand",
+    "lint": "eslint src/ bin/ tests/",
+    "format": "node bin/envora.js format",
+    "build": "node -e \"console.log('ESM package — no build step required.')\"",
+    "prepublishOnly": "npm test"
+  },
+  "devDependencies": {
+    "jest": "29.7.0",
+    "jest-environment-node": "29.7.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "transform": {},
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ]
+  },
+  "contributes": {
+    "iconThemes": [{
+      "id": "envora-icons",
+      "label": "Envora Icons",
+      "path": "./icon-theme.json"
+    }]
+  }
+}

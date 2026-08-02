@@ -1,0 +1,52 @@
+{
+  "name": "envora-vscode",
+  "displayName": "Envora",
+  "description": "File icon and syntax highlighting for .envora configuration files",
+  "version": "1.0.0",
+  "publisher": "envora",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Themes",
+    "Language Packs"
+  ],
+  "icon": "icons/envora.png",
+  "contributes": {
+    "languages": [
+      {
+        "id": "envora",
+        "aliases": [
+          "Envora",
+          "envora"
+        ],
+        "extensions": [
+          ".envora"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "envora",
+        "scopeName": "source.envora",
+        "path": "./syntaxes/envora.tmLanguage.json"
+      }
+    ],
+    "iconThemes": [
+      {
+        "id": "envora-icons",
+        "label": "Envora File Icons",
+        "path": "./icon-theme.json"
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/envora/envora-vscode.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "envora": "file:../envora-1.0.0.tgz"
+  }
+}

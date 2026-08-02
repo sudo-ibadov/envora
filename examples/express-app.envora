@@ -1,0 +1,44 @@
+# Express Application Configuration
+
+APP {
+    name: "My Express API"
+    environment: "development"
+    debug: false
+}
+
+SERVER {
+    host: "0.0.0.0"
+    port: 3000
+    baseUrl: "http://${SERVER.host}:${SERVER.port}"
+    cors {
+        enabled: true
+        origins = [
+            "http://localhost:3000",
+            "https://myapp.com"
+        ]
+    }
+}
+
+DATABASE {
+    host: "localhost"
+    port: 5432
+    name: "myapp"
+    credentials {
+        username: env("DB_USER", "postgres")
+        password: secret(env("DB_PASSWORD"))
+    }
+    pool {
+        min: 2
+        max: 10
+    }
+}
+
+JWT {
+    secret: secret(env("JWT_SECRET"))
+    expiresIn: "7d"
+}
+
+RATE_LIMIT {
+    windowMs: 900000
+    max: 100
+}

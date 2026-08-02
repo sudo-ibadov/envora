@@ -1,0 +1,35 @@
+# Discord Bot Configuration via Envora
+# Envora is completely Discord-agnostic — this is just a standard config file.
+# Set these environment variables before running your bot:
+#   DISCORD_TOKEN=your_token_here
+#   DISCORD_CLIENT_ID=your_client_id
+#   DISCORD_GUILD_ID=your_guild_id
+
+APP {
+    name: "My Discord Bot"
+    version: "1.0.0"
+    environment: "production"
+}
+
+DISCORD {
+    token: secret(env("DISCORD_TOKEN"))
+    clientId: env("DISCORD_CLIENT_ID")
+    guildId: env("DISCORD_GUILD_ID")
+}
+
+DATABASE {
+    host: "localhost"
+    port: 5432
+    name: "botdb"
+    password: secret(env("DATABASE_PASSWORD"))
+}
+
+BOT {
+    prefix: "!"
+    maxCommands: 50
+    cooldown: 3
+    adminRoles = [
+        "Admin",
+        "Moderator"
+    ]
+}
